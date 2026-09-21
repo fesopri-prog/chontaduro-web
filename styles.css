@@ -1,0 +1,138 @@
+:root {
+    --fondo: #090909;
+    --fondo-secundario: #111111;
+    --tarjeta: #171717;
+    --borde: #292929;
+    --texto: #ffffff;
+    --texto-suave: #aaaaaa;
+    --acento: #ff5a36;
+    --ancho: 1200px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { background: var(--fondo); color: var(--texto); font-family: Arial, Helvetica, sans-serif; line-height: 1.5; overflow-x: hidden; }
+a { color: inherit; }
+
+.header {
+    height: 90px;
+    padding: 0 max(7%, calc((100vw - var(--ancho)) / 2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(9, 9, 9, 0.94);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.logo { font-size: 25px; letter-spacing: 4px; }
+.logo a { color: white; text-decoration: none; transition: color .3s ease; }
+.logo a:hover { color: var(--acento); }
+nav { display: flex; gap: 28px; }
+nav a { color: #ddd; text-decoration: none; font-size: 14px; transition: color .3s ease; }
+nav a:hover, nav a.activo { color: var(--acento); }
+
+.portada {
+    min-height: calc(100vh - 90px);
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.72) 44%, rgba(0,0,0,.16) 100%), url("Imagenes/Portada.png");
+    background-size: cover;
+    background-position: center;
+}
+.contenido-portada { max-width: 900px; }
+.eyebrow, .etiqueta, .titulo-seccion p { color: var(--acento); font-size: 12px; font-weight: 700; letter-spacing: 3px; margin-bottom: 18px; }
+.contenido-portada h2 { font-size: clamp(48px, 6vw, 78px); line-height: .98; letter-spacing: -2px; margin-bottom: 28px; }
+.contenido-portada h2 span, .contenido-talleres h2 span, .contenido-nosotros h2 span, .contenido-contacto h2 span { color: var(--acento); }
+.intro { max-width: 610px; font-size: 19px; line-height: 1.7; color: #c9c9c9; margin-bottom: 36px; }
+.botones { display: flex; gap: 14px; flex-wrap: wrap; }
+.boton { display: inline-block; padding: 14px 28px; border-radius: 999px; text-decoration: none; font-weight: 700; transition: transform .3s ease, opacity .3s ease, background .3s ease; }
+.boton:hover { transform: translateY(-3px); opacity: .88; }
+.boton-primario { background: var(--acento); color: white; }
+.boton-secundario { background: transparent; border: 1px solid rgba(255,255,255,.75); color: white; }
+.scroll-indicator { position: absolute; bottom: 28px; right: 7%; color: #aaa; text-decoration: none; font-size: 12px; letter-spacing: 2px; }
+
+.seccion { padding: 110px 7%; }
+.titulo-seccion { margin-bottom: 52px; }
+.titulo-seccion h2 { font-size: clamp(38px, 4vw, 52px); line-height: 1.05; }
+.titulo-con-linea { display: flex; align-items: flex-end; gap: 40px; }
+.linea-decorativa { height: 1px; background: var(--borde); flex: 1; margin-bottom: 8px; }
+
+.servicios { background: var(--fondo-secundario); }
+.contenedor-servicios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.servicio { min-height: 285px; padding: 34px; background: linear-gradient(145deg, #191919, #131313); border: 1px solid var(--borde); display: flex; flex-direction: column; justify-content: flex-end; transition: transform .35s ease, border-color .35s ease; }
+.servicio:hover { transform: translateY(-8px); border-color: var(--acento); }
+.numero { color: #555; font-size: 13px; letter-spacing: 2px; margin-bottom: auto; }
+.servicio h3 { font-size: 24px; margin-bottom: 14px; }
+.servicio p { color: var(--texto-suave); line-height: 1.7; }
+
+.proyectos { background: var(--fondo); }
+.contenedor-proyectos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.proyecto { height: 470px; padding: 30px; border: 1px solid var(--borde); display: flex; align-items: flex-end; position: relative; overflow: hidden; text-decoration: none; color: white; background-size: 100%; background-position: center; background-repeat: no-repeat; transition: transform .45s ease, border-color .45s ease, background-size .65s ease; }
+.proyecto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,.88) 100%); }
+.proyecto-1 { background-image: url("Imagenes/proyectos/Proyecto 01.png"); }
+.proyecto-2 { background-image: url("Imagenes/proyectos/Proyecto 02.png"); }
+.proyecto-3 { background-image: url("Imagenes/proyectos/Proyecto 03.png"); }
+.proyecto:hover { transform: translateY(-8px); border-color: var(--acento); background-size: 108%; }
+.info-proyecto { position: relative; z-index: 2; }
+.info-proyecto p { color: var(--acento); font-size: 11px; font-weight: 700; letter-spacing: 2px; margin-bottom: 8px; }
+.info-proyecto h3 { font-size: 29px; margin-bottom: 8px; }
+.info-proyecto span { color: #bbb; font-size: 13px; opacity: 0; transform: translateY(5px); display: inline-block; transition: .3s ease; }
+.proyecto:hover .info-proyecto span { opacity: 1; transform: translateY(0); }
+
+.talleres { min-height: 620px; background: #141414; display: grid; grid-template-columns: 1.3fr .7fr; gap: 60px; align-items: center; }
+.contenido-talleres { max-width: 800px; }
+.contenido-talleres h2, .contenido-nosotros h2, .contenido-contacto h2 { font-size: clamp(42px, 5vw, 62px); line-height: 1.03; margin-bottom: 26px; letter-spacing: -1px; }
+.descripcion-talleres, .texto-nosotros, .texto-contacto { max-width: 680px; color: var(--texto-suave); font-size: 18px; line-height: 1.8; margin-bottom: 34px; }
+.detalle-talleres { display: grid; gap: 12px; justify-items: end; }
+.detalle-talleres span { font-size: clamp(28px, 4vw, 52px); font-weight: 800; color: #222; letter-spacing: 2px; }
+.detalle-talleres span:nth-child(3) { color: var(--acento); }
+
+.nosotros { background: var(--fondo); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 70px; }
+.contenido-nosotros { max-width: 900px; }
+.sello { width: 190px; height: 190px; border: 1px solid #333; border-radius: 50%; display: grid; place-content: center; text-align: center; font-weight: 800; letter-spacing: 3px; color: #555; transform: rotate(-8deg); }
+.sello small { font-size: 10px; letter-spacing: 4px; }
+
+.contacto { min-height: 610px; background: radial-gradient(circle at 80% 50%, rgba(255,90,54,.11), transparent 30%), #141414; display: flex; align-items: center; }
+.contenido-contacto { max-width: 850px; }
+
+.footer { padding: 58px 7%; background: #070707; border-top: 1px solid var(--borde); }
+.contenido-footer { text-align: center; }
+.contenido-footer h3 { font-size: 23px; letter-spacing: 5px; margin-bottom: 14px; }
+.contenido-footer > p { color: #777; font-size: 14px; }
+.redes-footer { display: flex; justify-content: center; gap: 26px; margin-top: 24px; }
+.redes-footer a { color: #ddd; text-decoration: none; font-size: 14px; transition: color .3s ease; }
+.redes-footer a:hover { color: var(--acento); }
+.contenido-footer .copyright { font-size: 12px; color: #555; margin-top: 26px; }
+
+@media (max-width: 900px) {
+    html { scroll-padding-top: 130px; }
+    .header { height: auto; padding: 20px 7%; flex-direction: column; gap: 16px; }
+    nav { flex-wrap: wrap; justify-content: center; gap: 12px 18px; }
+    .portada { min-height: 78vh; background-position: 60% center; }
+    .contenedor-servicios, .contenedor-proyectos { grid-template-columns: 1fr; }
+    .proyecto { height: 390px; background-size: cover; }
+    .proyecto:hover { background-size: cover; }
+    .talleres { grid-template-columns: 1fr; }
+    .detalle-talleres { display: none; }
+    .nosotros { grid-template-columns: 1fr; }
+    .sello { display: none; }
+    .titulo-con-linea { display: block; }
+    .linea-decorativa { display: none; }
+}
+
+@media (max-width: 560px) {
+    .seccion { padding: 78px 7%; }
+    .portada { padding-top: 55px; padding-bottom: 70px; }
+    .contenido-portada h2 { font-size: 45px; }
+    .intro { font-size: 17px; }
+    .botones { flex-direction: column; align-items: flex-start; }
+    .boton { text-align: center; }
+    .scroll-indicator { display: none; }
+    .servicio { min-height: 230px; }
+    .contenido-talleres h2, .contenido-nosotros h2, .contenido-contacto h2 { font-size: 40px; }
+}
