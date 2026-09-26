@@ -239,7 +239,7 @@ nav a:hover, nav a.activo { color: var(--acento); }
 
 .servicios-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
     width: 100%;
 }
@@ -420,16 +420,120 @@ nav a:hover, nav a.activo { color: var(--acento); }
     font-size: 12px;
     line-height: 1.6;
 }
-.talleres { min-height: 620px; background: #141414; display: grid; grid-template-columns: 1.3fr .7fr; gap: 60px; align-items: center; }
-.contenido-talleres { max-width: 800px; }
-.contenido-talleres h2, .contenido-contacto h2 { font-size: clamp(42px, 5vw, 62px); line-height: 1.03; margin-bottom: 26px; letter-spacing: -1px; }
-.descripcion-talleres, .texto-contacto { max-width: 680px; color: var(--texto-suave); font-size: 18px; line-height: 1.8; margin-bottom: 34px; }
-.detalle-talleres { display: grid; gap: 12px; justify-items: end; }
-.detalle-talleres span { font-size: clamp(28px, 4vw, 52px); font-weight: 800; color: #222; letter-spacing: 2px; }
-.detalle-talleres span:nth-child(3) { color: var(--acento); }
+/* ===== TALLERES Y EXPERIENCIAS AUDIOVISUALES ===== */
 
-.contacto { min-height: 610px; background: radial-gradient(circle at 80% 50%, rgba(255,90,54,.11), transparent 30%), #141414; display: flex; align-items: center; }
-.contenido-contacto { max-width: 850px; }
+.talleres {
+    background: #141414;
+    padding-top: 25px;
+    padding-bottom: 80px;
+}
+
+.talleres-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 55px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contenido-talleres {
+    max-width: 650px;
+    margin: 0;
+    text-align: left;
+}
+
+.contenido-talleres .etiqueta {
+    color: var(--acento);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.contenido-talleres h2 {
+    font-size: clamp(42px, 5vw, 62px);
+    line-height: 1.03;
+    letter-spacing: -1px;
+    margin-bottom: 28px;
+}
+
+.contenido-talleres h2 span {
+    color: var(--acento);
+}
+
+.descripcion-talleres {
+    max-width: 760px;
+    margin: 0 auto 18px;
+    color: var(--texto-suave);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.descripcion-talleres strong {
+    color: #ffffff;
+}
+
+.talleres-frase {
+    max-width: 620px;
+    margin: 28px auto 32px;
+    padding-left: 18px;
+    border-left: 3px solid var(--acento);
+    color: #ffffff;
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+.talleres-frase strong {
+    color: var(--acento);
+}
+
+.talleres-imagen {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #0b0b0b;
+}
+
+.talleres-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.contacto {
+    min-height: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: radial-gradient(circle at 80% 50%, rgba(255,90,54,.11), transparent 30%), #141414;
+    display: flex;
+    align-items: center;
+}
+.contenido-contacto {
+    max-width: 850px;
+}
+
+.contenido-contacto .etiqueta {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.contenido-contacto h2 {
+    line-height: 1.18;
+    margin-bottom: 32px;
+}
+
+.contenido-contacto > p:not(.etiqueta) {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--texto-suave);
+    margin-bottom: 32px;
+}
 
 .footer { padding: 58px 7%; background: #070707; border-top: 1px solid var(--borde); }
 .contenido-footer { text-align: center; }
@@ -455,8 +559,12 @@ nav a:hover, nav a.activo { color: var(--acento); }
     .contenedor-servicios, .contenedor-proyectos { grid-template-columns: 1fr; }
     .proyecto { height: 390px; background-size: cover; }
     .proyecto:hover { background-size: cover; }
-    .talleres { grid-template-columns: 1fr; }
-    .detalle-talleres { display: none; }
+    
+.talleres-imagen {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
     .titulo-con-linea { display: block; }
     .linea-decorativa { display: none; }
     .nosotros-grid {
@@ -474,20 +582,87 @@ nav a:hover, nav a.activo { color: var(--acento); }
 }
 
 @media (max-width: 560px) {
-    .servicios-grid {
-    grid-template-columns: 1fr;
-}
 
-.proyectos-grid {
-    grid-template-columns: 1fr;
-}
-    .seccion { padding: 78px 7%; }
-    .portada { padding-top: 55px; padding-bottom: 70px; }
-    .contenido-portada h2 { font-size: 45px; }
-    .intro { font-size: 17px; }
-    .botones { flex-direction: column; align-items: flex-start; }
-    .boton { text-align: center; }
-    .scroll-indicator { display: none; }
-    .servicio { min-height: 230px; }
-    .contenido-talleres h2, .contenido-contacto h2 { font-size: 40px; }
+    .servicios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .proyectos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .seccion {
+        padding: 78px 7%;
+    }
+
+    .portada {
+        padding-top: 55px;
+        padding-bottom: 70px;
+    }
+
+    .contenido-portada h2 {
+        font-size: 45px;
+    }
+
+    .intro {
+        font-size: 17px;
+    }
+
+    .botones {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .boton {
+        text-align: center;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .servicio {
+        min-height: 230px;
+    }
+
+    /* TALLERES EN CELULAR */
+
+    .talleres {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .talleres-imagen {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .talleres-imagen img {
+        width: 100%;
+        height: auto;
+    }
+
+    .contenido-talleres {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contenido-talleres h2 {
+        font-size: 40px;
+        line-height: 1.05;
+    }
+
+    .descripcion-talleres {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .talleres-frase {
+        font-size: 18px;
+        margin: 24px 0 28px;
+    }
+
+    .contenido-contacto h2 {
+        font-size: 40px;
+    }
 }
