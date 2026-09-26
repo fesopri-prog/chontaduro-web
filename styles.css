@@ -632,6 +632,11 @@ nav a:hover, nav a.activo { color: var(--acento); }
         padding-bottom: 75px;
     }
 
+    .talleres-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+}
+
     .talleres-imagen {
         width: 100%;
         max-width: 100%;
