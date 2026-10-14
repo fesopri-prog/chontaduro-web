@@ -1859,3 +1859,830 @@ padding: 15px 7% 60px;
     box-shadow: 0 0 30px rgba(255,48,48,.8);
 
 }
+
+/* ==========================================
+   CHONTADURO FILM — PORTADA TALLERES
+   ========================================== */
+
+.talleres-hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #080808;
+}
+
+/* FOTOGRAFÍA DE FONDO */
+
+.talleres-hero-fondo {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.92) 0%,
+            rgba(0,0,0,.75) 28%,
+            rgba(0,0,0,.25) 65%,
+            rgba(0,0,0,.08) 100%
+        ),
+        url("Imagenes/talleres-portada.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* CONTENIDO PRINCIPAL */
+
+.talleres-hero-contenido {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 720px;
+    padding: 80px 7%;
+}
+
+.talleres-hero-etiqueta {
+    color: #ff5a36;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+}
+
+/* TÍTULO */
+
+
+.talleres-hero h2 {
+    color: #ffffff;
+    font-size: clamp(42px, 4.5vw, 66px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+
+.talleres-hero h2 span {
+    display: block;
+    color: #ff5a36;
+}
+
+/* DESCRIPCIÓN */
+
+.talleres-hero-descripcion {
+    max-width: 550px;
+    color: #eeeeee;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* BOTÓN ROJO */
+
+.talleres-hero-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 30px;
+    background: #e63828;
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    transition: all .3s ease;
+}
+
+.talleres-hero-boton:hover {
+    background: #ff5a36;
+    transform: translateY(-3px);
+}
+
+/* SECCIÓN PROVISIONAL DE INSCRIPCIONES */
+
+.talleres-inscripciones {
+    padding: 90px 7%;
+    background: #111111;
+    text-align: center;
+}
+
+.talleres-inscripciones h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.talleres-inscripciones p {
+    color: #aaaaaa;
+    font-size: 17px;
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 768px) {
+    .talleres-hero {
+        min-height: 600px;
+    }
+
+    .talleres-hero-contenido {
+        padding: 70px 7%;
+    }
+
+    .talleres-hero h2 {
+        font-size: 48px;
+    }
+
+    .talleres-hero-descripcion {
+        font-size: 16px;
+    }
+
+    .talleres-hero-fondo {
+        background-position: 60% center;
+    }
+}
+
+
+/* =========================================
+   PORTADA TALLERES - DISEÑO HORIZONTAL
+========================================= */
+
+.talleres-hero {
+    min-height: 0;
+    height: auto;
+    padding: 35px 0 45px;
+    align-items: center;
+}
+
+.talleres-hero-contenido {
+    width: 100%;
+    max-width: none;
+    padding: 15px 5%;
+}
+
+/* PALABRA TALLERES MUCHO MÁS GRANDE */
+
+.talleres-hero-etiqueta {
+    font-size: clamp(28px, 3.5vw, 52px);
+    font-weight: 900;
+    letter-spacing: 5px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+/* TITULO EXTENDIDO HORIZONTALMENTE */
+
+.talleres-hero h2 {
+    width: 100%;
+    max-width: none;
+    font-size: clamp(38px, 4.5vw, 78px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.talleres-hero h2 span {
+    display: inline;
+}
+
+/* DESCRIPCIÓN MÁS ANCHA */
+
+.talleres-hero-descripcion {
+    max-width: 950px;
+    margin-bottom: 22px;
+}
+
+/* AJUSTE PARA CELULARES */
+
+@media (max-width: 600px) {
+    .talleres-hero {
+        padding: 25px 0 35px;
+    }
+
+    .talleres-hero-etiqueta {
+        font-size: 30px;
+    }
+
+    .talleres-hero h2 {
+        font-size: 40px;
+    }
+}
+
+/* =========================================
+   EXPERIENCIAS CHONTADURO FILM
+========================================= */
+
+.experiencias-chontaduro {
+    background: #090909;
+    padding: 85px 5% 100px;
+    color: #ffffff;
+}
+
+/* ENCABEZADO */
+
+.experiencias-encabezado {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto 55px;
+}
+
+.experiencias-etiqueta {
+    color: #ff5a36;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.experiencias-encabezado h2 {
+    font-size: clamp(40px, 5vw, 76px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.experiencias-encabezado h2 span {
+    color: #ff5a36;
+}
+
+.experiencias-encabezado > p:last-child {
+    color: #bbbbbb;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* TRES TARJETAS */
+
+.experiencias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.experiencia-card {
+    position: relative;
+    min-height: 480px;
+    overflow: hidden;
+    background: #181818;
+    border: 1px solid #292929;
+}
+
+.experiencia-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.experiencia-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.95) 0%,
+        rgba(0,0,0,.45) 42%,
+        transparent 78%
+    );
+    pointer-events: none;
+}
+
+.experiencia-info {
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    bottom: 30px;
+    z-index: 2;
+}
+
+.experiencia-info span {
+    color: #ff5a36;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.experiencia-info h3 {
+    font-size: clamp(23px, 2.5vw, 36px);
+    font-weight: 900;
+    margin: 8px 0 12px;
+}
+
+.experiencia-info p {
+    color: #eeeeee;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* HERNEY LUNA */
+
+.experiencias-director {
+    max-width: 1100px;
+    margin: 75px auto 0;
+    padding: 55px 30px;
+    text-align: center;
+    background: #161616;
+    border: 1px solid #292929;
+}
+
+.experiencias-director > p:first-child {
+    color: #ff5a36;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.experiencias-director h3 {
+    font-size: clamp(46px, 6vw, 86px);
+    line-height: 1;
+    margin: 15px 0 22px;
+}
+
+.experiencias-director-texto {
+    max-width: 700px;
+    margin: 0 auto 32px;
+    color: #bbbbbb;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.experiencias-boton {
+    display: inline-block;
+    padding: 17px 30px;
+    background: #e63828;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-radius: 7px;
+    transition: background .3s ease;
+}
+
+.experiencias-boton:hover {
+    background: #ff5a36;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .experiencias-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+    .experiencias-chontaduro {
+        padding: 60px 5%;
+    }
+
+    .experiencias-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experiencia-card {
+        min-height: 420px;
+    }
+
+    .experiencias-director {
+        margin-top: 45px;
+        padding: 40px 20px;
+    }
+}
+
+
+/* ==========================================================
+   LO QUE HACEMOS — COLLAGE CÓMIC DEFINITIVO
+   Un único conjunto de reglas, sin bordes rectangulares.
+   La viñeta negra y el video usan el MISMO polígono.
+   ========================================================== */
+
+#servicios {
+    background-color: #f6a52e;
+    background-image: url("Imagenes/fondos/fondo-comic-superheroes.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 110px;
+    padding-bottom: 90px;
+}
+
+#servicios .servicios-encabezado .eyebrow {
+    color: #ff5a36;
+    text-shadow: 3px 3px 0 #000;
+}
+#servicios .servicios-encabezado h2 {
+    color: #fff;
+    text-shadow: 3px 3px 0 #000;
+}
+#servicios .servicios-intro {
+    color: #fff;
+    text-shadow: 1px 2px 3px #000;
+}
+
+@media (min-width: 901px) {
+    #servicios .servicios-video-grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-rows: 290px 290px;
+        column-gap: 10px;
+        row-gap: 12px;
+        padding: 9px;
+        background: #fff;
+        border: 3px solid #111;
+        overflow: hidden;
+    }
+
+    #servicios .servicios-video-grid .servicio-video {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        aspect-ratio: auto;
+        background: #050505;
+        overflow: hidden;
+        /* Forma exterior del marco negro */
+        clip-path: var(--vineta);
+    }
+
+    #servicios .servicios-video-grid .servicio-video video {
+        position: absolute;
+        inset: 5px;
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        object-fit: cover;
+        display: block;
+        /* Mismo corte diagonal, por dentro del marco negro */
+        clip-path: var(--vineta);
+    }
+
+    #servicios .servicio-video:nth-child(1) {
+        grid-column: 1 / 6;
+        grid-row: 1;
+        --vineta: polygon(0 0, 100% 0, 96% 100%, 0 100%);
+    }
+    #servicios .servicio-video:nth-child(2) {
+        grid-column: 6 / 9;
+        grid-row: 1;
+        --vineta: polygon(5% 0, 100% 0, 96% 100%, 0 100%);
+    }
+    #servicios .servicio-video:nth-child(3) {
+        grid-column: 9 / 13;
+        grid-row: 1;
+        --vineta: polygon(4% 0, 100% 0, 100% 100%, 0 100%);
+    }
+    #servicios .servicio-video:nth-child(4) {
+        grid-column: 1 / 5;
+        grid-row: 2;
+        --vineta: polygon(0 0, 100% 0, 96% 100%, 0 100%);
+    }
+    #servicios .servicio-video:nth-child(5) {
+        grid-column: 5 / 10;
+        grid-row: 2;
+        --vineta: polygon(4% 0, 100% 0, 96% 100%, 0 100%);
+    }
+    #servicios .servicio-video:nth-child(6) {
+        grid-column: 10 / 13;
+        grid-row: 2;
+        --vineta: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@media (max-width: 900px) {
+    #servicios .servicios-video-grid {
+        gap: 10px;
+        padding: 10px;
+        background: #fff;
+        border: 3px solid #111;
+    }
+    #servicios .servicios-video-grid .servicio-video {
+        border: 4px solid #111;
+        clip-path: none;
+    }
+    #servicios .servicios-intro { white-space: normal; }
+}
+
+/* TÍTULOS CÓMIC — LO QUE HACEMOS */
+
+#servicios .servicios-encabezado {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+#servicios .servicios-encabezado .eyebrow {
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(38px, 4vw, 68px);
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.15;
+    -webkit-text-stroke: 2px #111111;
+    text-shadow: 5px 5px 0 #111111;
+    margin-bottom: 18px;
+}
+
+#servicios .servicios-encabezado h2 {
+    display: inline-block;
+    width: auto;
+    max-width: 95%;
+    padding: 10px 28px;
+    background: #ffffff;
+    color: #111111;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(27px, 3vw, 45px);
+    font-weight: 700;
+    line-height: 1.2;
+    border: 4px solid #111111;
+    box-shadow: 6px 6px 0 #111111;
+    transform: rotate(-2deg);
+    margin: 0 auto 24px;
+}
+
+#servicios .servicios-encabezado .servicios-intro {
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 2px 2px 3px #000000,
+                 -1px -1px 2px #000000;
+    max-width: 1050px;
+    margin: 0 auto 28px;
+}
+
+/* TÍTULO PRINCIPAL — ESTILO CÓMIC LEGIBLE */
+
+#servicios .servicios-encabezado h2 {
+    display: inline-block;
+    width: auto;
+    max-width: 95%;
+    padding: 14px 34px;
+    margin: 4px auto 28px;
+
+    background: #fffdf4;
+    color: #111111;
+
+    font-family: 'Oswald', Impact, sans-serif;
+    font-size: clamp(34px, 4.2vw, 64px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    /* Eliminar efectos que dificultan la lectura */
+    text-shadow: none;
+    -webkit-text-stroke: 0;
+    filter: none;
+
+    /* Marco de historieta */
+    border: 4px solid #111111;
+    box-shadow: 7px 7px 0 #111111;
+    transform: rotate(-1deg);
+}
+
+@media (max-width: 600px) {
+    #servicios .servicios-encabezado h2 {
+        font-size: clamp(26px, 7vw, 38px);
+        padding: 10px 16px;
+        transform: rotate(0);
+    }
+}
+
+
+/* TALLERES — VENTANAS TRANSPARENTES SOBRE LOS VIDEOS */
+.talleres-film-real { width:100%; background:#0a0706; overflow:hidden; }
+.talleres-escenario { position:relative; width:100%; aspect-ratio:1672 / 941; isolation:isolate; }
+.talleres-marcos { position:absolute; inset:0; width:100%; height:100%; display:block; z-index:2; pointer-events:none; }
+.taller-video { position:absolute; z-index:1; display:block; object-fit:cover; background:#090909; }
+.taller-video-01 { left:4.42584%; top:33.04995%; width:14.95215%; height:18.70351%; }
+.taller-video-02 { left:21.11244%; top:33.36876%; width:14.41388%; height:18.38470%; }
+.taller-video-03 { left:37.73923%; top:29.64931%; width:24.46172%; height:21.57279%; }
+.taller-video-04 { left:64.29426%; top:32.83741%; width:14.11483%; height:18.80978%; }
+.taller-video-05 { left:80.62201%; top:32.94368%; width:15.07177%; height:18.80978%; }
+.taller-video-06 { left:4.18660%; top:55.79171%; width:17.58373%; height:19.76621%; }
+.taller-video-07 { left:23.62440%; top:55.89798%; width:18.00239%; height:20.61637%; }
+.taller-video-08 { left:43.06220%; top:56.96068%; width:16.02871%; height:20.19129%; }
+.taller-video-09 { left:60.94498%; top:56.85441%; width:15.07177%; height:20.93518%; }
+.taller-video-10 { left:77.69139%; top:56.74814%; width:18.06220%; height:21.46652%; }
+@media (max-width:600px) {
+ .talleres-film-real { overflow-x:auto; }
+ .talleres-escenario { min-width:760px; }
+}
+
+/* INTRO MATRIX DEL MONITOR CRT: no modifica el resto de la web */
+#talleres .matrix-crt {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    display: none;
+    pointer-events: none;
+    border-radius: inherit;
+}
+#talleres.crt-matrix-activo .matrix-crt { display: block; }
+#talleres.crt-matrix-activo .terminal-contenido { visibility: hidden; }
+#talleres.crt-presentacion .terminal-texto,
+#talleres.crt-presentacion .terminal-revelacion { visibility: hidden; }
+#talleres.crt-presentacion .terminal-contenido {
+    display: block;
+    text-align: left;
+}
+#talleres.crt-presentacion .terminal-cabecera {
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 3px;
+    margin: 0 0 28px;
+    animation: parpadeoSistema 1.2s steps(1) infinite;
+}
+#talleres.crt-secuencia-original .terminal-cabecera { animation: none; opacity: 1; }
+
+/* ENCABEZADO CINEMATOGRÁFICO — PÁGINA TALLERES */
+.talleres-hero-titulo {
+    padding: 60px 6% 45px;
+    background: #0a0706;
+    text-align: center;
+    overflow: hidden;
+}
+.talleres-hero-etiqueta {
+    color: #ff6937;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+    animation: talleresAparecer .8s ease both;
+}
+.talleres-hero-titulo h1 {
+    font-family: 'Oswald', Impact, Arial, sans-serif;
+    font-size: clamp(38px, 5.5vw, 88px);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 0 auto 18px;
+}
+.talleres-hero-blanco, .talleres-hero-naranja { display: inline-block; }
+.talleres-hero-blanco { color: #fff; animation: talleresAparecer .9s .2s ease both; }
+.talleres-hero-naranja { color: #ff6937; animation: talleresAparecer .9s .6s ease both; }
+.talleres-hero-frase {
+    color: #e5d9d0;
+    font-size: clamp(15px, 1.5vw, 19px);
+    line-height: 1.5;
+    animation: talleresAparecer .9s .9s ease both;
+}
+.talleres-hero-linea {
+    display: block;
+    width: 72px;
+    height: 3px;
+    margin: 24px auto 0;
+    background: #ff6937;
+    border-radius: 3px;
+    animation: talleresAparecer .9s 1.1s ease both;
+}
+@keyframes talleresAparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 600px) {
+    .talleres-hero-titulo { padding: 42px 6% 35px; }
+    .talleres-hero-etiqueta { font-size: 10px; letter-spacing: 2px; }
+    .talleres-hero-titulo h1 { letter-spacing: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .talleres-hero-titulo * { animation: none !important; }
+}
+
+/* TÍTULO INTEGRADO SOBRE LA FOTOGRAFÍA, SIN BANDA NEGRA */
+.talleres-escenario > .talleres-hero-titulo {
+    position: absolute;
+    z-index: 3;
+    top: 3.5%;
+    left: 0;
+    width: 100%;
+    padding: 0 4%;
+    background: transparent;
+    overflow: visible;
+    pointer-events: none;
+    text-shadow: 0 2px 15px rgba(0,0,0,.85);
+}
+.talleres-escenario > .talleres-hero-titulo h1 {
+    font-size: clamp(25px, 4.7vw, 86px);
+    margin-bottom: 1.2%;
+    white-space: nowrap;
+}
+.talleres-escenario > .talleres-hero-titulo .talleres-hero-etiqueta {
+    font-size: clamp(8px, .8vw, 12px);
+    margin-bottom: .8%;
+}
+.talleres-escenario > .talleres-hero-titulo .talleres-hero-frase {
+    font-size: clamp(11px, 1.1vw, 19px);
+}
+.talleres-escenario > .talleres-hero-titulo .talleres-hero-linea {
+    margin-top: 1.3%;
+}
+@media (max-width: 600px) {
+    .talleres-escenario > .talleres-hero-titulo h1 { font-size: 35px; }
+    .talleres-escenario > .talleres-hero-titulo .talleres-hero-frase { font-size: 12px; }
+}
+
+/* Ajuste solicitado: mayor tamaño de presentación y subtítulo */
+.talleres-escenario > .talleres-hero-titulo .talleres-hero-etiqueta {
+    font-size: clamp(13px, 1.45vw, 23px);
+    letter-spacing: clamp(2px, .3vw, 5px);
+    margin-bottom: 1%;
+}
+.talleres-escenario > .talleres-hero-titulo .talleres-hero-frase {
+    font-size: clamp(14px, 1.65vw, 27px);
+    font-weight: 600;
+}
+@media (max-width: 600px) {
+    .talleres-escenario > .talleres-hero-titulo h1 { font-size: clamp(20px, 5.4vw, 35px); }
+    .talleres-escenario > .talleres-hero-titulo .talleres-hero-etiqueta { font-size: clamp(9px, 2.4vw, 13px); }
+    .talleres-escenario > .talleres-hero-titulo .talleres-hero-frase { font-size: clamp(10px, 2.7vw, 14px); }
+}
+
+/* Ajuste puntual: título de la sección de las tres experiencias */
+.experiencias-encabezado h2 {
+    font-size: clamp(27px, 3.55vw, 60px);
+    letter-spacing: -1.8px;
+    white-space: nowrap;
+}
+@media (max-width: 800px) {
+    .experiencias-encabezado h2 {
+        white-space: normal;
+        font-size: clamp(28px, 6vw, 44px);
+        letter-spacing: -1px;
+    }
+}
+
+/* Título actualizado: Descubre tu talento */
+.experiencias-encabezado h2 {
+    color: #ff5a36;
+}
+.experiencias-encabezado > p:last-child {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Formulario de inscripción - Talleres de actuación */
+.talleres-formulario-seccion {background:#080808; padding:80px 24px 100px; color:#fff;}
+.talleres-formulario-contenedor {max-width:1050px; margin:0 auto; display:grid; grid-template-columns:.85fr 1.15fr; gap:60px; align-items:start;}
+.talleres-formulario-etiqueta {color:#ff5a36; font-size:13px; font-weight:800; letter-spacing:3px;}
+.talleres-formulario-intro h2 {font-family:Oswald,Impact,sans-serif; font-size:clamp(40px,5vw,68px); line-height:1.05; margin:20px 0;}
+.talleres-formulario-intro h2 span {color:#ff5a36;}
+.talleres-formulario-intro>p:last-child {color:#c9c9c9; font-size:17px; line-height:1.65;}
+.talleres-formulario {background:#171717; border:1px solid #333; padding:32px; display:flex; flex-direction:column; gap:20px;}
+.talleres-formulario-dos-columnas {display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+.talleres-formulario label {display:flex; flex-direction:column; gap:9px; color:#f1f1f1; font-size:14px; font-weight:600;}
+.talleres-formulario input,.talleres-formulario select,.talleres-formulario textarea {box-sizing:border-box; width:100%; background:#0d0d0d; border:1px solid #414141; border-radius:4px; padding:14px 13px; color:#fff; font:inherit; font-weight:400; outline-offset:2px;}
+.talleres-formulario input:focus,.talleres-formulario select:focus,.talleres-formulario textarea:focus {border-color:#ff5a36; outline:1px solid #ff5a36;}
+.talleres-formulario input::placeholder,.talleres-formulario textarea::placeholder {color:#999;}
+.talleres-formulario button {cursor:pointer; border:0; background:#f03a2b; color:white; font-weight:800; letter-spacing:1px; padding:17px 24px; border-radius:6px;}
+.talleres-formulario button:hover {background:#ff5a36;}
+.talleres-formulario-aviso {color:#aaa; font-size:12px; line-height:1.5; margin:0;}
+@media(max-width:800px) {.talleres-formulario-contenedor {grid-template-columns:1fr;gap:28px;}.talleres-formulario-seccion {padding:55px 18px;}}
+@media(max-width:540px) {.talleres-formulario-dos-columnas {grid-template-columns:1fr;}.talleres-formulario {padding:20px;}}
+
+
+/* ===== CONTACTO PRINCIPAL: restauración del formulario ===== */
+#contacto .contacto-contenedor {
+    width: 100%; max-width: 1280px; margin: 0 auto;
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center; gap: clamp(36px, 5vw, 90px);
+}
+#contacto { padding-top: 80px; padding-bottom: 80px; }
+#contacto .contenido-contacto { min-width: 0; }
+#contacto .contenido-contacto .etiqueta { color: #ff5a36; font-size: 14px; letter-spacing: 3px; margin-bottom: 20px; }
+#contacto .contenido-contacto h2 { font-family: Oswald, Arial, sans-serif; font-size: clamp(38px, 4vw, 62px); line-height: 1.1; margin-bottom: 26px; }
+#contacto .contenido-contacto h2 span { color: #ff5a36; }
+#contacto .texto-contacto { max-width: 590px; }
+#contacto .contacto-email { display: inline-block; color: #fff; font-weight: 600; text-decoration: none; border-bottom: 1px solid #ff5a36; padding-bottom: 5px; overflow-wrap: anywhere; }
+#contacto .contacto-email:hover { color: #ff5a36; }
+#contacto .contacto-formulario-panel { min-width: 0; padding: clamp(24px, 3vw, 42px); background: #1a1a1a; border: 1px solid #383838; border-radius: 8px; box-shadow: 0 24px 70px rgba(0,0,0,.24); }
+#contacto .contacto-formulario-panel h3 { font-family: Oswald, Arial, sans-serif; font-size: 29px; line-height: 1.2; margin-bottom: 10px; }
+#contacto .contacto-formulario-panel > p { color: #bcbcbc; font-size: 15px; margin-bottom: 28px; }
+#contacto .contacto-formulario { display: flex; flex-direction: column; gap: 11px; }
+#contacto .contacto-formulario label { color: #f1f1f1; font-size: 14px; font-weight: 600; margin-top: 5px; }
+#contacto .contacto-formulario input:not([type="hidden"]):not(.contacto-trampa),
+#contacto .contacto-formulario textarea { display: block; width: 100%; min-width: 0; padding: 13px 15px; background: #101010; border: 1px solid #464646; border-radius: 5px; color: white; font: inherit; font-size: 15px; outline: none; }
+#contacto .contacto-formulario textarea { min-height: 120px; resize: vertical; }
+#contacto .contacto-formulario input:focus,
+#contacto .contacto-formulario textarea:focus { border-color: #ff5a36; box-shadow: 0 0 0 2px rgba(255,90,54,.15); }
+#contacto .contacto-formulario input::placeholder,
+#contacto .contacto-formulario textarea::placeholder { color: #888; }
+#contacto .contacto-formulario .contacto-trampa { display: none !important; }
+#contacto .contacto-formulario button { margin-top: 12px; width: 100%; padding: 16px 20px; border: 0; border-radius: 5px; background: #f03a2b; color: white; font: inherit; font-size: 14px; font-weight: 800; letter-spacing: 1px; cursor: pointer; transition: background .2s ease; }
+#contacto .contacto-formulario button:hover { background: #ff5a36; }
+@media (max-width: 850px) {
+    #contacto .contacto-contenedor { grid-template-columns: 1fr; gap: 35px; }
+    #contacto { padding-top: 65px; padding-bottom: 65px; }
+}

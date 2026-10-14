@@ -23,7 +23,7 @@
             <a href="#inicio" class="activo">Inicio</a>
             <a href="#servicios">Servicios</a>
             <a href="#proyectos">Proyectos</a>
-            <a href="#talleres">Talleres</a>
+            <a href="talleres.html">Talleres</a>
             <a href="#nosotros">Nosotros</a>
             <a href="#contacto">Contacto</a>
         </nav>
@@ -264,10 +264,7 @@
     <div class="servicios-encabezado">
         <p class="eyebrow">LO QUE HACEMOS</p>
         <h2>Servicios audiovisuales</h2>
-        <p class="servicios-intro">
-            Creamos, producimos y llevamos historias a la pantalla.
-            De una idea a un rodaje, de una marca a un territorio, de una experiencia a una historia.
-        </p>
+       
     </div>
 
     <div class="servicios-video-grid">
@@ -352,11 +349,12 @@
 
                 <div class="reflejo-crt"></div>
                 <div class="scanlines-crt"></div>
+                <canvas class="matrix-crt" aria-hidden="true"></canvas>
 
                 <div class="terminal-contenido">
 
                     <div class="terminal-cabecera">
-                        CHONTADURO SYSTEM // 2026
+                        CHONTADURO SYSTEM // 2026 - TALLERES Y EXPERIENCIAS
                     </div>
 
                     <div class="terminal-texto">
@@ -400,13 +398,32 @@
     </div>
 
 </section>
-    
         <section class="contacto seccion" id="contacto">
-            <div class="contenido-contacto">
-                <p class="etiqueta">HABLEMOS</p>
-                <h2>¿Tienes una historia<br><span>que quieras contar?</span></h2>
-                <p class="texto-contacto">Cuéntanos sobre tu proyecto y construyamos juntos una propuesta audiovisual.</p>
-                <a href="https://wa.me/573133959824?text=Hola%20Chontaduro,%20quiero%20cotizar%20un%20proyecto%20audiovisual." class="boton boton-primario" target="_blank" rel="noopener noreferrer">Cuéntanos tu proyecto</a>
+            <div class="contacto-contenedor">
+                <div class="contenido-contacto">
+                    <p class="etiqueta">CONTACTO · CHONTADURO FILM</p>
+                    <h2>HABLEMOS DE TU <span>PRÓXIMA HISTORIA.</span></h2>
+                    <p class="texto-contacto">¿Tienes una idea o un proyecto audiovisual en mente? En Chontaduro Film transformamos tus ideas en historias que conectan, emocionan y dejan huella.</p>
+                    <a class="contacto-email" href="mailto:chontadurofilm@gmail.com">chontadurofilm@gmail.com</a>
+                </div>
+                <div class="contacto-formulario-panel">
+                    <h3>CUÉNTANOS TU PROYECTO</h3>
+                    <p>Completa el formulario y nos pondremos en contacto contigo.</p>
+                    <form class="contacto-formulario" action="https://formsubmit.co/chontadurofilm@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Nuevo proyecto desde la web de Chontaduro Film">
+                        <input type="hidden" name="_captcha" value="true">
+                        <input type="text" name="_honey" class="contacto-trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <label for="contacto-nombre">Nombre completo</label>
+                        <input id="contacto-nombre" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name" required maxlength="120">
+                        <label for="contacto-correo">Correo electrónico</label>
+                        <input id="contacto-correo" name="email" type="email" placeholder="tu@correo.com" autocomplete="email" required maxlength="180">
+                        <label for="contacto-telefono">Teléfono de contacto</label>
+                        <input id="contacto-telefono" name="telefono" type="tel" placeholder="Tu número de contacto" autocomplete="tel" maxlength="35">
+                        <label for="contacto-mensaje">Cuéntanos sobre tu proyecto</label>
+                        <textarea id="contacto-mensaje" name="proyecto" rows="5" placeholder="¿Qué te gustaría producir?" required maxlength="5000"></textarea>
+                        <button type="submit">ENVIAR MENSAJE <span aria-hidden="true">→</span></button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
@@ -416,9 +433,7 @@
             <h3>CHONTADURO</h3>
             <p>Productora audiovisual · Colombia</p>
             <div class="redes-footer">
-                <a href="#">Instagram</a>
-                <a href="#">YouTube</a>
-                <a href="#">TikTok</a>
+                <a href="https://www.instagram.com/chontadurofilm/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Chontaduro Film">Instagram ↗</a>
             </div>
             <p class="copyright">© 2026 Chontaduro. Todos los derechos reservados.</p>
         </div>
@@ -452,85 +467,134 @@ botonSonido.addEventListener('click', () => {
     
 </script>
 <script>
-const lineasTerminal = document.querySelectorAll('.terminal-texto p');
-const revelacionTerminal = document.querySelector('.terminal-revelacion');
-const cabeceraTerminal = document.querySelector('.terminal-cabecera');
-const pantallaTerminal = document.querySelector('.terminal-contenido');
+(() => {
+    const seccion = document.querySelector('#talleres');
+    const monitor = seccion.querySelector('.monitor-crt');
+    const pantalla = seccion.querySelector('.pantalla-crt');
+    const canvas = seccion.querySelector('.matrix-crt');
+    const ctx = canvas.getContext('2d');
+    const cabeceraTerminal = seccion.querySelector('.terminal-cabecera');
+    const pantallaTerminal = seccion.querySelector('.terminal-contenido');
+    const lineasTerminal = [...seccion.querySelectorAll('.terminal-texto p')];
+    const revelacionTerminal = seccion.querySelector('.terminal-revelacion');
+    const textosTerminal = lineasTerminal.map(linea => linea.textContent);
+    lineasTerminal.forEach(linea => { linea.textContent = ''; });
+    revelacionTerminal.style.display = 'none';
 
-const textosTerminal = Array.from(lineasTerminal).map(linea => linea.textContent);
+    let estado = 'espera';
+    let animacion = 0;
+    let columnas = [];
+    let ultimoFotograma = 0;
+    let lineaActual = 0;
 
-lineasTerminal.forEach(linea => {
-    linea.textContent = '';
-});
-
-revelacionTerminal.style.display = 'none';
-
-let lineaActual = 0;
-let terminalIniciada = false;
-
-function desplazarTerminal() {
-    pantallaTerminal.scrollTo({
-        top: pantallaTerminal.scrollHeight,
-        behavior: 'smooth'
-    });
-}
-
-function escribirLinea() {
-    if (lineaActual === 0) {
-        cabeceraTerminal.classList.add('sistema-activo');
+    function ajustarCanvas() {
+        const escala = Math.min(window.devicePixelRatio || 1, 2);
+        const ancho = pantalla.clientWidth;
+        const alto = pantalla.clientHeight;
+        canvas.width = Math.round(ancho * escala);
+        canvas.height = Math.round(alto * escala);
+        ctx.setTransform(escala, 0, 0, escala, 0, 0);
+        columnas = Array.from({length: Math.ceil(ancho / 17)}, () => Math.random() * -alto / 17);
+        ctx.fillStyle = '#010601';
+        ctx.fillRect(0, 0, ancho, alto);
     }
 
-    if (lineaActual >= lineasTerminal.length) {
-        revelacionTerminal.style.display = 'flex';
-        desplazarTerminal();
-        return;
+    function dibujarMatrix(tiempo) {
+        if (estado !== 'matrix') return;
+        animacion = requestAnimationFrame(dibujarMatrix);
+        if (tiempo - ultimoFotograma < 48) return;
+        ultimoFotograma = tiempo;
+        const ancho = pantalla.clientWidth;
+        const alto = pantalla.clientHeight;
+        ctx.fillStyle = 'rgba(0, 7, 2, 0.10)';
+        ctx.fillRect(0, 0, ancho, alto);
+        ctx.font = '15px monospace';
+        const caracteres = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&';
+        columnas.forEach((y, i) => {
+            const simbolo = caracteres[Math.floor(Math.random() * caracteres.length)];
+            ctx.fillStyle = Math.random() > 0.94 ? '#c7ffd0' : '#27cb52';
+            ctx.fillText(simbolo, i * 17, y * 17);
+            columnas[i] = y * 17 > alto && Math.random() > 0.975 ? -Math.random() * 22 : y + (0.6 + Math.random() * 0.5);
+        });
     }
 
-    const elemento = lineasTerminal[lineaActual];
-    const texto = textosTerminal[lineaActual];
-    let letra = 0;
+    function iniciarMatrix() {
+        if (estado !== 'espera') return;
+        estado = 'matrix';
+        seccion.classList.add('crt-matrix-activo');
+        ajustarCanvas();
+        animacion = requestAnimationFrame(dibujarMatrix);
+    }
 
-    function escribir() {
-        if (letra < texto.length) {
-            elemento.textContent += texto.charAt(letra);
-            letra++;
+    function iniciarPresentacion() {
+        if (estado !== 'matrix') return;
+        estado = 'presentacion';
+        cancelAnimationFrame(animacion);
+        seccion.classList.remove('crt-matrix-activo');
+        seccion.classList.add('crt-presentacion');
+        setTimeout(() => {
+            seccion.classList.remove('crt-presentacion');
+            seccion.classList.add('crt-secuencia-original');
+            estado = 'original';
+            escribirLinea();
+        }, 3000);
+    }
 
+    function desplazarTerminal() {
+        pantallaTerminal.scrollTo({top: pantallaTerminal.scrollHeight, behavior: 'smooth'});
+    }
+
+    function escribirLinea() {
+        if (lineaActual === 0) cabeceraTerminal.classList.add('sistema-activo');
+        if (lineaActual >= lineasTerminal.length) {
+            revelacionTerminal.style.display = 'flex';
             desplazarTerminal();
-
-            if (lineaActual === 0 && elemento.textContent === '¡Espera!') {
-                setTimeout(escribir, 3000);
+            return;
+        }
+        const elemento = lineasTerminal[lineaActual];
+        const texto = textosTerminal[lineaActual];
+        let letra = 0;
+        function escribir() {
+            if (letra < texto.length) {
+                elemento.textContent += texto.charAt(letra);
+                letra++;
+                desplazarTerminal();
+                if (lineaActual === 0 && elemento.textContent === '¡Espera!') {
+                    setTimeout(escribir, 3000);
+                } else {
+                    setTimeout(escribir, 85);
+                }
             } else {
-                setTimeout(escribir, 85);
+                lineaActual++;
+                const pausa = lineaActual === 12 ? 5000 : 3000;
+                setTimeout(escribirLinea, pausa);
             }
-        } else {
-            lineaActual++;
+        }
+        escribir();
+    }
 
-            const pausa = lineaActual === 12 ? 5000 : 3000;
-            setTimeout(escribirLinea, pausa);
+    function comprobarVisibilidad() {
+        const rect = monitor.getBoundingClientRect();
+        const seccionRect = seccion.getBoundingClientRect();
+        if (estado === 'espera' && seccionRect.top < window.innerHeight && seccionRect.bottom > 0) {
+            iniciarMatrix();
+        }
+        // Si el monitor es más alto que la ventana, activar al estar centrado.
+        const completamenteVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+        const centradoEnVentana = rect.height > window.innerHeight &&
+            rect.top <= window.innerHeight * 0.12 && rect.bottom >= window.innerHeight * 0.88;
+        if (estado === 'matrix' && (completamenteVisible || centradoEnVentana)) {
+            iniciarPresentacion();
+        }
+        if (estado === 'original') {
+            window.removeEventListener('scroll', comprobarVisibilidad);
+            window.removeEventListener('resize', comprobarVisibilidad);
         }
     }
-
-    escribir();
-}
-
-function comprobarMonitorVisible() {
-    if (terminalIniciada) return;
-
-    const monitor = document.querySelector('.monitor-crt');
-    const rect = monitor.getBoundingClientRect();
-
-    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-        terminalIniciada = true;
-        escribirLinea();
-
-        window.removeEventListener('scroll', comprobarMonitorVisible);
-        window.removeEventListener('resize', comprobarMonitorVisible);
-    }
-}
-
-window.addEventListener('scroll', comprobarMonitorVisible, { passive: true });
-window.addEventListener('resize', comprobarMonitorVisible);
-comprobarMonitorVisible();
+    window.addEventListener('scroll', comprobarVisibilidad, {passive: true});
+    window.addEventListener('resize', comprobarVisibilidad);
+    comprobarVisibilidad();
+})();
 </script>
 </body>
 </html>

@@ -1,47 +1,147 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talleres y Experiencias | Chontaduro</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talleres de Actuación | Chontaduro Film</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header class="header">
-        <h1 class="logo">
-            <a href="index.html#inicio">
-                <img src="Imagenes/Logo-Chontaduro.png" alt="Chontaduro">
-            </a>
-        </h1>
+<header class="header">
+  <h1 class="logo">
+    <a href="index.html#inicio">
+      <img src="Imagenes/Logo-Chontaduro.png" alt="Chontaduro Film">
+    </a>
+  </h1>
 
-        <nav aria-label="Navegación principal">
-            <a href="index.html#inicio">Inicio</a>
-            <a href="index.html#servicios">Servicios</a>
-            <a href="index.html#proyectos">Proyectos</a>
-            <a href="index.html#talleres" class="activo">Talleres</a>
-            <a href="index.html#nosotros">Nosotros</a>
-            <a href="index.html#contacto">Contacto</a>
-        </nav>
-    </header>
+  <nav aria-label="Navegación principal">
+    <a href="index.html#inicio">Inicio</a>
+    <a href="index.html#servicios">Servicios</a>
+    <a href="index.html#proyectos">Proyectos</a>
+    <a href="talleres.html" class="activo">Talleres</a>
+    <a href="index.html#nosotros">Nosotros</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+</header>
 
-    <main>
-        <section class="seccion">
-            <p style="color: #ff5a36; letter-spacing: 4px;">
-                CHONTADURO FILM
-            </p>
+<main>
+  <!-- Collage: imagen aprobada con ventanas transparentes y videos reales -->
+  <section class="talleres-film-real" id="experiencias" aria-label="Talleres y experiencias audiovisuales">
+    <div class="talleres-escenario">
+      <video class="taller-video taller-video-01" autoplay muted loop playsinline preload="metadata" aria-label="Video del taller 01" src="Videos/talleres/01-taller.mp4"></video>
+      <video class="taller-video taller-video-02" autoplay muted loop playsinline preload="metadata" aria-label="Video del taller 02" src="Videos/talleres/02-taller.mp4"></video>
+      <video class="taller-video taller-video-03" autoplay muted loop playsinline preload="metadata" aria-label="Video del taller 03" src="Videos/talleres/03-taller.mp4"></video>
+      <video class="taller-video taller-video-04" autoplay muted loop playsinline preload="metadata" aria-label="Video del taller 04" src="Videos/talleres/04-taller.mp4"></video>
+      <video class="taller-video taller-video-05" autoplay muted loop playsinline preload="metadata" aria-label="Video del taller 05" src="Videos/talleres/05-taller.mp4"></video>
+      <video class="taller-video taller-video-06" autoplay muted loop playsinline preload="metadata" aria-label="Video del taller 06" src="Videos/talleres/06-taller.mp4"></video>
+      <video class="taller-video taller-video-07" autoplay muted loop playsinline preload="metadata" aria-label="Video del taller 07" src="Videos/talleres/07-taller.mp4"></video>
+      <video class="taller-video taller-video-08" autoplay muted loop playsinline preload="metadata" aria-label="Video del taller 08" src="Videos/talleres/08-taller.mp4"></video>
+      <video class="taller-video taller-video-09" autoplay muted loop playsinline preload="metadata" aria-label="Video del taller 09" src="Videos/talleres/09-taller.mp4"></video>
+      <video class="taller-video taller-video-10" autoplay muted loop playsinline preload="metadata" aria-label="Video del taller 10" src="Videos/talleres/10-taller.mp4"></video>
+      <img class="talleres-marcos" src="Imagenes/fondos/fondo_talleres_marcos.png" alt="Talleres y experiencias, collage de diez fotogramas cinematográficos" draggable="false">
+  <!-- Título principal de Talleres y Experiencias -->
+  <section class="talleres-hero-titulo" aria-labelledby="titulo-talleres">
+    <p class="talleres-hero-etiqueta">CHONTADURO FILM PRESENTA</p>
+    <h1 id="titulo-talleres"><span class="talleres-hero-blanco">TALLERES</span> <span class="talleres-hero-naranja">DE ACTUACIÓN</span></h1>
+    <p class="talleres-hero-frase">VIVE LA EXPERIENCIA</p>
+    <span class="talleres-hero-linea" aria-hidden="true"></span>
+  </section>
 
-            <h2 style="font-size: 52px; margin: 20px 0;">
-                TALLERES Y EXPERIENCIAS
-            </h2>
+    </div>
+  </section>
 
-            <p style="max-width: 700px; color: #aaaaaa; font-size: 18px;">
-                Una experiencia audiovisual diseñada para descubrir,
-                desarrollar y transformar tu manera de comunicarte,
-                expresarte y conectar con los demás.
-            </p>
-        </section>
-    </main>
+<section id="inscripciones" class="experiencias-chontaduro">
+
+  <div class="experiencias-encabezado">
+    <h2>DESCUBRE TU TALENTO.</h2>
+    <p>Talleres prácticos donde desarrollarás tus habilidades de interpretación, expresión y comunicación, viviendo la experiencia de una producción audiovisual.</p>
+  </div>
+
+  <div class="experiencias-grid">
+
+    <article class="experiencia-card">
+      <img src="Imagenes/talleres/personalizado.jpg"
+           alt="Taller personalizado de cine">
+      <div class="experiencia-info">
+        <span>01</span>
+        <h3>PERSONALIZADO</h3>
+        <p>Desarrolla tu talento actoral con una formación exclusiva, adaptada a tus habilidades y objetivos.</p>
+      </div>
+    </article>
+
+    <article class="experiencia-card">
+      <img src="Imagenes/talleres/grupal.jpg"
+           alt="Taller grupal de cine">
+      <div class="experiencia-info">
+        <span>02</span>
+        <h3>GRUPAL</h3>
+        <p>Aprende a actuar, conecta con otros talentos y vive la experiencia de crear una producción audiovisual.</p>
+      </div>
+    </article>
+
+    <article class="experiencia-card">
+      <img src="Imagenes/talleres/conversatorios.jpg"
+           alt="Conversatorios de cine">
+      <div class="experiencia-info">
+        <span>03</span>
+        <h3>CONVERSATORIOS</h3>
+        <p>Descubre los secretos del cine y la televisión a través de experiencias y conversaciones con profesionales de la industria.</p>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="experiencias-director">
+    <p>UNA EXPERIENCIA DIRIGIDA POR</p>
+    <h3>HERNEY LUNA</h3>
+    <p class="experiencias-director-texto">
+      Más de 20 años de trayectoria audiovisual.
+      Aprende directamente de un director que ha dedicado
+      su carrera a contar historias.
+    </p>
+
+    <a href="#solicitar-informacion" class="experiencias-boton">
+      QUIERO VIVIR LA EXPERIENCIA →
+    </a>
+  </div>
+
+</section>
+
+
+<section class="talleres-formulario-seccion" id="solicitar-informacion" aria-labelledby="titulo-formulario-talleres">
+  <div class="talleres-formulario-contenedor">
+    <div class="talleres-formulario-intro">
+      <p class="talleres-formulario-etiqueta">INSCRIPCIONES · CHONTADURO FILM</p>
+      <h2 id="titulo-formulario-talleres">VIVE LA <span>EXPERIENCIA.</span></h2>
+      <p>Cuéntanos qué taller te interesa y nos pondremos en contacto contigo para darte toda la información.</p>
+    </div>
+    <form class="talleres-formulario" action="https://formsubmit.co/chontadurofilm@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Nueva solicitud de taller - Chontaduro Film">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="talleres-formulario-dos-columnas">
+        <label>Nombre completo <input type="text" name="Nombre" placeholder="Tu nombre" autocomplete="name" required></label>
+        <label>Correo electrónico <input type="email" name="Correo" placeholder="tu@correo.com" autocomplete="email" required></label>
+        <label>Teléfono de contacto <input type="tel" name="Telefono" placeholder="Tu número de contacto" autocomplete="tel" required></label>
+        <label>Taller de interés
+          <select name="Taller" required>
+            <option value="" disabled selected>Selecciona un taller</option>
+            <option value="Personalizado">Personalizado</option>
+            <option value="Grupal">Grupal</option>
+            <option value="Conversatorios">Conversatorios</option>
+          </select>
+        </label>
+      </div>
+      <label>Mensaje (opcional) <textarea name="Mensaje" rows="4" placeholder="Cuéntanos qué te gustaría aprender..."></textarea></label>
+      <button type="submit">ENVIAR SOLICITUD →</button>
+      <p class="talleres-formulario-aviso">Tus datos se utilizarán únicamente para responder a tu solicitud.</p>
+    </form>
+  </div>
+</section>
+
+</main>
 
 </body>
 </html>
